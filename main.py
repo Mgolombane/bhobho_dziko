@@ -88,3 +88,90 @@ def total_fruits(**fruits):
 print(total_fruits(banana=5, mango=7, apple=8))
 print(total_fruits(banana=5, mango=7, apple=8, oranges=10))
 print(total_fruits(banana=5, mango=7))
+
+
+y = [1, 2, 3, 4, 5, 6]
+
+print(y)
+
+import numpy as np
+
+z = np.array(y)
+
+print(z)
+
+print(type(y))
+
+print(type(z))
+
+m = np.array([[1, 5, 2],
+              [4, 7, 4],
+              [2, 0, 9]])
+
+print(m)
+
+print(type(m))
+
+print(m.shape)
+#matrix transpose
+print('Matrix transpose:', m.transpose(), '/n')
+
+#matrix determinant
+print('Matrix Determinant:', np.linalg.det(m), '/n')
+
+#matrix inverse
+m_inv = np.linalg.inv(m)
+print('Matrix inverse:\n', m_inv, '\n')
+
+#idendity matrix (result of matrix x matrix_inverse)
+
+iden_m = np.dot(m, m_inv)
+
+iden_m = np.round(np.abs(iden_m), 0)
+
+print('Product of matrix and its inverse:\n', iden_m)
+
+#eigendecomposition
+n = np.array([[1, 5, 2],
+             [4, 7, 4],
+             [2, 0, 9]])
+
+eigen_vals, eigen_vecs = np.linalg.eig(n)
+
+print('Eigen Values:', eigen_vals, '\n')
+
+print('Eigen Vectors:\n', eigen_vecs)
+
+# SVD
+m = np.array([[1, 5, 2],
+             [4, 7, 4],
+             [2, 0, 9]])
+
+U, S, VT = np.linalg.svd(m)
+
+print('Getting SVD outputs:-\n')
+
+print('U:\n', U,'\n')
+print('S:\n', S, '\n')
+print('VT:\n', VT, '\n')
+
+#descriptive statistics
+import scipy as sp
+
+import scipy.cluster as spc
+
+#get data
+nums = np.random.randint(1,20, size=(1,15))[0]
+print('Data:', nums)
+help(sp)
+#det descriptive stats
+print('Mean:', sp.mean(nums))
+print('Median:', sp.median(nums))
+#print('Mode:', spc.stats.mode(nums))
+print('Standard Deviation:', sp.std(nums))
+print('Variance:', sp.var(nums))
+#print('Skew:', spc.stats.skew(nums))
+#print('Kurtosis:', spc.stats.kurtosis(nums))
+
+
+
